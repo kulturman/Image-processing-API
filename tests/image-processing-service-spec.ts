@@ -1,5 +1,5 @@
 import { ImageProcessingService } from "../src/services/image-processing-service"
-import { FakeImageProcessor } from "./fake-image-processor";
+import { FakeImageProcessor } from "./services/fake-image-processor";
 
 it ('expects service to resolve if imageProcessor resolves and has expected metadata', async () => {
     const imageProcessor = new ImageProcessingService(new FakeImageProcessor());

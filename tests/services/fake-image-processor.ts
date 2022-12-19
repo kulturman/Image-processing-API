@@ -1,5 +1,5 @@
-import { Dimension } from "../src/models/dimension";
-import { ImageProcessorInterface, ResizedImageResult } from "../src/services/image-processor-interface";
+import { Dimension } from "../../src/models/dimension";
+import { ImageProcessorInterface, ResizedImageResult } from "../../src/services/image-processor-interface";
 
 export class FakeImageProcessor implements ImageProcessorInterface {
     constructor(private resolve = true) {}

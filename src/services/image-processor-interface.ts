@@ -1,7 +1,7 @@
 import { Dimension } from "../models/dimension";
 
 export interface ImageProcessorInterface {
-    resizeImage(source: string, destination: string, dimension: Dimension): Promise<any>;
+    resizeImage(source: string, destination: string, dimension: Dimension): Promise<ResizedImageResult>;
 }
 
 export interface ResizedImageResult {
