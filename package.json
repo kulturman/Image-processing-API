@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"tsc --watch\" \"nodemon dist/src/index.js\" \"npm run copy:assets\"",
-    "copy:assets": "cpx 'src/assets/**' 'dist/assets'",
+    "copy:assets": "cpx 'src/assets/**' 'dist/assets' && cpx 'tests/assets/**' 'dist/tests/assets'",
     "test": "npm run build && jasmine",
     "build": "tsc"
   },

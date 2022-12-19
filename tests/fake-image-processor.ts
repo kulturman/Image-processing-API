@@ -6,9 +6,9 @@ export class FakeImageProcessor implements ImageProcessorInterface {
 
     resizeImage(source: string, destination: string, dimension: Dimension): Promise<ResizedImageResult> {
         return this.resolve ? Promise.resolve({
-            path: '',
-            width: 0,
-            height: 0
+            path: destination,
+            width: dimension.width,
+            height: dimension.width
         }): Promise.reject('Cannot process image');
     }
     

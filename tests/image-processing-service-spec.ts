@@ -1,10 +1,15 @@
 import { ImageProcessingService } from "../src/services/image-processing-service"
 import { FakeImageProcessor } from "./fake-image-processor";
 
-it ('expects service to resolve if imageProcessor resolves', async () => {
+it ('expects service to resolve if imageProcessor resolves and has expected metadata', async () => {
     const imageProcessor = new ImageProcessingService(new FakeImageProcessor());
-    const result = await imageProcessor.resizeImage('', { width: 200, height: 200 });
-    expect(result).toBeDefined();
+    const result = await imageProcessor.resizeImage('Image.png', { width: 200, height: 200 });
+
+    expect(result).toEqual({
+        path: imageProcessor.generateThumbnailPath('Image.png', { width: 200, height: 200 }),
+        width: 200,
+        height: 200
+    });
 })
 
 it ('expects service to fail if imageProcessor fails', () => {

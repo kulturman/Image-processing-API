@@ -14,7 +14,7 @@ export class SharpImageProcessor implements ImageProcessorInterface {
                    ...dimension
                 });
             })
-            .catch(error => {
+            .catch(error => {console.log(error);
                 return Promise.reject('Unable to process image');
             })
     }
