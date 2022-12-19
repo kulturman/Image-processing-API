@@ -1,11 +1,12 @@
 import express, { Express, Request, Response } from 'express';
-import { ImageProcessingService } from './image-processing-service';
+import { ImageProcessingService } from './services/image-processing-service';
+import { SharpImageProcessor } from './services/sharp-image-processor';
 
 const app: Express = express();
 const port = 5000;
 
 app.get('/api/images', async (req: Request, res: Response) => {
-    const imageProcessor = new ImageProcessingService();
+    const imageProcessor = new ImageProcessingService(new SharpImageProcessor());
 
     const { filename, width, height } = req.query;
 
@@ -21,7 +22,7 @@ app.get('/api/images', async (req: Request, res: Response) => {
 
     try {
         const result = await imageProcessor.resizeImage(filename.toString(), { width: +width, height: +height });
-        return res.sendFile(result.thumbnailPath);
+        return res.sendFile(result.path);
     }
 
     catch(error) {
