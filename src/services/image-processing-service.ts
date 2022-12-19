@@ -1,5 +1,4 @@
 import path from "path";
-import sharp from 'sharp';
 import * as fs from 'fs';
 import { Dimension } from "../models/dimension";
 import { ImageProcessorInterface } from "./image-processor-interface";
