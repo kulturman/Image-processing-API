@@ -7,7 +7,9 @@
     "dev": "concurrently \"tsc --watch\" \"nodemon dist/src/index.js\" \"npm run copy:assets\"",
     "copy:assets": "cpx 'src/assets/**' 'dist/assets' && cpx 'tests/assets/**' 'dist/tests/assets'",
     "test": "npm run build && jasmine",
-    "build": "tsc && npm run copy:assets"
+    "build": "tsc && npm run copy:assets",
+    "lint": "eslint \"{src,tests}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
   "keywords": [],
   "author": "",
@@ -22,11 +24,17 @@
     "@types/node": "^18.11.14",
     "@types/sharp": "^0.31.0",
     "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "concurrently": "^7.6.0",
     "cpx": "^1.5.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
     "supertest": "^6.3.3",
     "typescript": "^4.9.4"
   }
