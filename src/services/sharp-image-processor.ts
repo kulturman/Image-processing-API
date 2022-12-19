@@ -15,7 +15,7 @@ export class SharpImageProcessor implements ImageProcessorInterface {
                 });
             })
             .catch(error => {
-                return Promise.reject('');
+                return Promise.reject('Unable to process image');
             })
     }
     
