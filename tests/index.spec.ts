@@ -14,6 +14,10 @@ describe('GET /api/images', () => {
       { width: 300, height: 300 },
     );
 
+    if (fs.existsSync(thumbnailPath)) {
+      fs.rmSync(thumbnailPath);
+    }
+
     expect(fs.existsSync(thumbnailPath)).toBeFalsy();
     await request(app)
       .get('/api/images?filename=test.png&width=300&height=300')
