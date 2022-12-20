@@ -9,7 +9,8 @@
     "test": "npm run build && jasmine",
     "build": "tsc && npm run copy:assets",
     "lint": "eslint \"{src,tests}/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "start": "npm run build && nodemon dist/src/index.js"
   },
   "keywords": [],
   "author": "",
