@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"tsc --watch\" \"nodemon dist/src/index.js\" \"npm run copy:assets\"",
     "copy:assets": "cpx 'src/assets/**' 'dist/assets' && cpx 'tests/assets/**' 'dist/tests/assets'",
-    "test": "npm run build && NODE_ENV=test jasmine",
+    "test": "npm run build && cross-env NODE_ENV=test jasmine",
     "build": "tsc && npm run copy:assets",
     "lint": "eslint \"{src,tests}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
@@ -29,6 +29,7 @@
     "@typescript-eslint/parser": "^5.47.0",
     "concurrently": "^7.6.0",
     "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
