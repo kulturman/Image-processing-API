@@ -1,4 +1,4 @@
-To launch the project, foolow these steps:
+To launch the project, follow these steps:
 
 npm i
 npm start
