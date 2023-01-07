@@ -5,7 +5,6 @@ import { SharpImageProcessor } from './services/sharp-image-processor';
 const app: Express = express();
 const port = 5000;
 
-console.log(process.env.NODE_ENV);
 app.get('/api/images', async (req: Request, res: Response) => {
   const imageProcessor = new ImageProcessingService(new SharpImageProcessor());
   const { filename, width, height } = req.query;
